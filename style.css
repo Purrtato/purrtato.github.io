@@ -147,6 +147,14 @@ a:focus-visible,
 .project {
   padding: 1.75rem 0;
   border-bottom: 1px solid var(--line);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.project.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project:last-child {
@@ -275,5 +283,10 @@ a:focus-visible,
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
+  }
+
+  .project {
+    opacity: 1;
+    transform: none;
   }
 }
