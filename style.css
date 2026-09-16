@@ -1,10 +1,11 @@
 :root {
-  --bg: #F1EDE2;
-  --ink: #262130;
-  --ink-soft: #5B5568;
-  --accent: #C98A2C;
-  --accent-2: #3E6259;
-  --line: #D8D0BC;
+  --bg: #F5EAD6;
+  --ink: #2B2230;
+  --ink-soft: #6B5C55;
+  --accent: #E08A2C;
+  --accent-2: #2F6B4F;
+  --accent-3: #C1502E;
+  --line: #E3C9A0;
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
@@ -72,16 +73,25 @@ a:focus-visible,
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 4.5rem 1.5rem 3.5rem;
+  position: relative;
 }
 
 .hero-eyebrow {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--accent-2);
-  margin: 0 0 0.75rem;
+  background: rgba(47, 107, 79, 0.1);
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin: 0 0 1rem;
 }
 
 .hero-name {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(2.8rem, 8vw, 4.2rem);
@@ -90,10 +100,35 @@ a:focus-visible,
 }
 
 .hero-text {
+  position: relative;
+  z-index: 1;
   max-width: 46ch;
   color: var(--ink-soft);
   font-size: 1.05rem;
   margin: 0;
+}
+
+.wave-divider {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  width: 100%;
+  height: 24px;
+  display: block;
+}
+
+.wave-divider path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.wave-divider.alt path {
+  stroke: var(--accent-2);
 }
 
 .section-title {
@@ -107,7 +142,6 @@ a:focus-visible,
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem 1.5rem 1rem;
-  border-top: 1px solid var(--line);
 }
 
 .project {
@@ -159,9 +193,19 @@ a:focus-visible,
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--accent-2);
-  background: rgba(62, 98, 89, 0.08);
-  padding: 0.25rem 0.6rem;
-  border-radius: 3px;
+  background: rgba(47, 107, 79, 0.09);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.project-tags li:nth-child(3n+2) {
+  color: var(--accent);
+  background: rgba(224, 138, 44, 0.1);
+}
+
+.project-tags li:nth-child(3n+3) {
+  color: var(--accent-3);
+  background: rgba(193, 80, 46, 0.1);
 }
 
 .project-demo {
@@ -204,7 +248,6 @@ a:focus-visible,
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2.5rem 1.5rem 4rem;
-  border-top: 1px solid var(--line);
   color: var(--ink-soft);
   font-size: 0.9rem;
 }
